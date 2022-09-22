@@ -3,6 +3,7 @@ const { Router } = require("express");
 const { toJWT } = require("../auth/jwt");
 const authMiddleware = require("../auth/middleware");
 const User = require("../models/").user;
+const space = require ("../models/").space;
 const { SALT_ROUNDS } = require("../config/constants");
 
 const router = new Router();
@@ -50,6 +51,13 @@ router.post("/signup", async (req, res) => {
       password: bcrypt.hashSync(password, SALT_ROUNDS),
       name,
     });
+
+    // Creates a new space for a user when they first sign up
+    const newSpace = await space.create({
+      title: `${name}'s Space`,
+      description: `This is your new space! Feel free to personalize it.`,
+      userId: newUser.id
+    })
 
     delete newUser.dataValues["password"]; // don't send back the password hash
 
