@@ -11,5 +11,15 @@ router.get("/:spaceId", async(req, res) => {
     res.json(spaceById)
 })
 
+// get all spaces
+router.get("/", async (request, response, next) => {
+    try {
+        const spaces = await spaces.findAll();
+        response.send(spaces);
+    } catch (e) {
+        console.log(e.message);
+        next(e);
+    }
+});
 
 module.exports = router;

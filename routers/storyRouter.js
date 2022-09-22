@@ -3,7 +3,7 @@ const story = require('../models').story
 
 const router = new Router();
 
-// gets all stories?
+// gets all stories
 router.get("/", async (request, response, next) => {
     try {
         const stories = await story.findAll();
