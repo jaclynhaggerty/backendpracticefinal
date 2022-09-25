@@ -26,9 +26,9 @@ app.use(express.json());
 
 //routes
 app.use("/auth", authRouter);
-app.use("/space", spaceRouter);
-app.use("/story", storyRouter);
-app.use("user", userRouter);
+app.use("/spaces", spaceRouter);
+app.use("/stories", storyRouter);
+app.use("/user", userRouter);
 
 //start listening
 app.listen(PORT, () => {

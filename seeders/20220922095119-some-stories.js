@@ -12,7 +12,24 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       spaceId: 1,
-     }], {});
+     },
+     {
+      name: "baby goat",
+      content: "Look at this cute lil guy",
+      imageUrl: "https://a-z-animals.com/media/2021/12/funny-goat-puts-out-its-tongue-picture-id177369626.jpg",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      spaceId: 1
+     },
+     {
+      name: "Here's another one",
+      content: "Look at em!",
+      imageUrl: "https://a-z-animals.com/media/2021/12/baby-goats-playing-together-in-hay-picture-id146731223.jpg",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      spaceId: 2
+     },
+    ], {});
   },
 
   async down (queryInterface, Sequelize) {

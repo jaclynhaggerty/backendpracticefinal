@@ -12,6 +12,15 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       userId: 1,
+     },
+     {
+      title: 'space2',
+      description: "this is a another description",
+      backgroundColor: "#cccccc",
+      color: "#c97d60",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      userId: 3,
      }], {});
   },
 
